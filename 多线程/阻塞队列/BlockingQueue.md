@@ -29,7 +29,7 @@
 
 ## 类图
 
-![1557421040869](E:\知识笔记\多线程\阻塞队列\BlockingQueue.png)
+![1557421040869](/image/BlockingQueue.png)
 
 继承Queue，元素具有先进先出（FIFO）特性，同时具有Collection的接口实现方法
 

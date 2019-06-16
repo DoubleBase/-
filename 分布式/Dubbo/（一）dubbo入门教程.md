@@ -222,7 +222,7 @@ hello xianggua
 
 - 启动tomcat，浏览器中输入网址http://localhost:8080/dubbo-admin-2.5.10 ，默认账号密码root/root，看到如下页面表示配置成功
 
-  ![1557163180608](E:\知识笔记\微服务\Dubbo\image\dubbo监控.png)
+  ![1557163180608](/image/dubbo监控.png)
 
 - 在这个页面可以配置查看自己的服务接口信息，服务提供者，消费者等内容，这里不一一介绍
 
