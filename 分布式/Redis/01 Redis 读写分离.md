@@ -33,11 +33,9 @@ redis replication --> 主从架构 --> 读写分离架构 --> 水平扩容支撑
 
 不建议用slave node作为master node的数据热备，因为那样的话，如果未开启持久化，可能在master宕机重启的时候数据库是空的，然后经过复制，slave node数据被清空
 
-
-
 第二个，master的需要有备份，防止本地所有文件丢失了，从备份中挑选一份rdb去恢复master，这样才能确保master启动的时候是有数据的
 
-
-
 即使采用了高可用机制，slave node可以自动接管master node，但也可能sentinal（哨兵）还没检测到master failure，master node就自动重启了，还是可能导致上面的所有slave node数据清空
+
+
 
