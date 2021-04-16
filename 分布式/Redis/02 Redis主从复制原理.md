@@ -8,7 +8,7 @@
 
 - slave和master之间如果有网络故障，断开了连接，会自动重连，master如果发现有多个slave node都来重连，仅仅会启动一个rdb save操作，用一份数据服务多个slave
 
-![1564409022502](/image/Redis主从复制原理.png)
+![1564409022502](./image/Redis主从复制原理.png)
 
 ## 主从复制的断点续传
 
@@ -50,7 +50,7 @@ master node的ip和port在redis.conf里面的slaveof配置的
 
 （6）master node后续持续将写命令，异步复制给slave node
 
-![1564665702660](/image/Redis主从复制原理2.png)
+![1564665702660](./image/Redis主从复制原理2.png)
 
 ## 数据同步的核心机制
 

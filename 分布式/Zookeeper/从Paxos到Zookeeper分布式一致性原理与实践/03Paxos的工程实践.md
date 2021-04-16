@@ -102,7 +102,7 @@ Chubby客户端和服务端之间通过创建一个TCP连接来进行所有的�
   4. 客户端收到响应后，立即再次发起KeepAlive请求
   5. 服务端阻塞，步骤2~4如此反复。所以正常请求过程中，客户端一定有个KeepAlive请求阻塞在服务器上
 
-![1558864093224](/image/Chubby会话.png)
+![1558864093224](./image/Chubby会话.png)
 
 - 会话超时：
 
@@ -135,7 +135,7 @@ Chubby服务端基本架构分为3层：
 
 - 存储层之上是Chubby对外提供的分布式锁服务和小文件服务
 
-![1558873076953](/image/Chubby服务端架构.png)
+![1558873076953](./image/Chubby服务端架构.png)
 
 其中Paxos算法的作用就是保证集群内各个副本节点的日志能够保持一致。Chubby事务日志中的每一个Value对应Paxos算法中的一个Instance，由于Chubby需要对外提供不间断的服务，因此事务日志会无线增长，于是在整个Chubby运行过程中，会存在多个Paxos Instance。同时，Chubby会为每一个Paxos Instance都按序分配一个全局唯一的Instance编号，并将其顺序写入到事务日志中去
 

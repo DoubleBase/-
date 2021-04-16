@@ -8,13 +8,13 @@
 
 redis replication --> 主从架构 --> 读写分离架构 --> 可支持水平扩展的读高并发架构
 
-![](/image/Redis主从实现读写分离.png)
+![](./image/Redis主从实现读写分离.png)
 
 ## 图解redis replication 基本原理
 
 redis replication --> 主从架构 --> 读写分离架构 --> 水平扩容支撑读高并发架构
 
-![img](/image/图解Redis replication.png)
+![img](./image/图解Redis replication.png)
 
 客户端通过master node进行写请求，master node将写结果告知客户端，通过异步的方式，将master数据同步复制给slave
 

@@ -13,7 +13,7 @@ dubbo框架设计一共划分了10层，具体如下：
 - 第九层：transport层，网络传输层，抽象mina和netty为统一接口
 - 第十层：serialize层，数据序列化层
 
-![dubbo工作原理](/image/dubbo工作原理.png)
+![dubbo工作原理](./image/dubbo工作原理.png)
 
 工作流程：
 
