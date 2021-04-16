@@ -2,7 +2,7 @@
 
 ## 开篇
 
-![](/image/原子变量LongAdder多线程竞争.png)
+![](./image/原子变量LongAdder多线程竞争.png)
 
 如上图所示，LongAdder在内部维护多个Cell变量，每个Cell里面有个初始值为0的long型变量，在同等并发情况下，竞争单个变量的线程数减少，变相的减少了争夺共享资源的并发量。下面我们通过源码看看内部是如何实现的。
 
@@ -26,7 +26,7 @@
 
 首先看下LongAdder的类图结构，继承了Striped64类。内部维护着3个变量：base，cells，cellsBusy。LongAdder的真实值是base的值加上Cell数组里面所有Cell元素中的value值的累加。
 
-![](/image/LongAdder类图.png)
+![](./image/LongAdder类图.png)
 
 ```java
 // cell元素数组，非空时数量为2的n次方    
@@ -282,7 +282,7 @@ static final int advanceProbe(int probe) {
 
 代码步骤10
 
-![1584189677693](/image\LongAdder初始化1.png)
+![1584189677693](./image\LongAdder初始化1.png)
 
 T1和T2线程同时执行add操作，线程T1执行casBase成功，对base进行累加，线程T2执行casBase失败，cell为null执行初始化流程（代码标注10）
 
@@ -294,7 +294,7 @@ T1和T2线程同时执行add操作，线程T1执行casBase成功，对base进行
 
 代码步骤2
 
-![1584191193944](E:\JavaKnowledge\多线程\image\LongAdder新增Cell.png)
+![1584191193944](./image\LongAdder新增Cell.png)
 
 线程T4执行add操作，执行casBase失败后，根据getProbe() & m计算Cell数组下标，当前下标元素为null，且cellsBusy为0（没有其他线程正在执行初始化，新增Cell，扩容的流程），则执行casCellsBusy，设置标识cellsBusy为1，新建Cell并添加到数组当中。
 
@@ -302,7 +302,7 @@ T1和T2线程同时执行add操作，线程T1执行casBase成功，对base进行
 
 代码步骤8，在6,7步骤都不满足的情况下才执行
 
-![1584193734485](E:\JavaKnowledge\多线程\image\LongAdder冲突.png)
+![1584193734485](./image\LongAdder冲突.png)
 
 线程T5执行add操作，执行casBase失败后，同样根据getProbe() & m计算Cell数组下标，当前下标元素为null，发现cellsBusy为1，与T4线程产生冲突，将cell数组扩容为原来数量的两倍，把原有数组中的元素复制到新的数组当中。
 

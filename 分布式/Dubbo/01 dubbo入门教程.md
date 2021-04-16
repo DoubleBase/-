@@ -18,7 +18,7 @@ Dubbo是一款高性能、轻量级的开源RPC框架，提供了三大核心能
 - dubbo_provider：服务提供者，通过dubbo对外提供服务
 - dubbo_consumer : 消费者，通过dubbo使用
 
-![1557158760605](/image/项目结构.png)
+![1557158760605](./image/项目结构.png)
 
 ## 定义服务接口（dubbo_api)
 
@@ -222,7 +222,7 @@ hello xianggua
 
 - 启动tomcat，浏览器中输入网址http://localhost:8080/dubbo-admin-2.5.10 ，默认账号密码root/root，看到如下页面表示配置成功
 
-  ![1557163180608](/image/dubbo监控.png)
+  ![1557163180608](./image/dubbo监控.png)
 
 - 在这个页面可以配置查看自己的服务接口信息，服务提供者，消费者等内容，这里不一一介绍
 
@@ -232,7 +232,7 @@ hello xianggua
 
 - dubbo.xsd命名空间无法通过http://code.alibabatech.com/schema/dubbo/dubbo.xsd进行访问，我们需要本地存储，并通过idea配置依赖关系
 
-![1557161173363](/image/命名空间.png)
+![1557161173363](./image/命名空间.png)
 
 
 

@@ -79,7 +79,7 @@ unsafe.compareAndSwapLong(this,valueOffset,expect,update);
 
 AtomicLong通过CAS提供了非阻塞的原子性操作，相比阻塞算法的同步器性能已经很好了，但是在高并发下大量线程会同时竞争更新一个原子变量，由于同时只有一个线程能够CAS操作成功，就会造成大量线程竞争失败，通过自旋尝试CAS，就白白的浪费了CPU资源。如下图所示：
 
-![](E:\JavaKnowledge\多线程\image\原子变量AtomicLong多线程竞争.png)
+![](./image\原子变量AtomicLong多线程竞争.png)
 
 既然瓶颈在于过多线程同时去竞争一个变量的更新而产生，那么如果把一个变量分解成多个变量，让同样多的线程去竞争多个资源就能解决这个性能问题，在JDK8中新增的LongAdder类就是这么设计的。
 
